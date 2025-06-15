@@ -38,5 +38,5 @@ monthly_sentiment["comment_count"] = df.groupby("month")["clean_text"].count().v
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 monthly_sentiment["sentiment_mean"] = monthly_sentiment["sentiment_mean"].round(4)
 monthly_sentiment.to_csv(output_path, index=False, sep=';', float_format='%.4f')
-print(f"✅ Sentimiento mensual guardado en: {output_path}")
+print(f" Sentimiento mensual guardado en: {output_path}")
 

@@ -1,5 +1,6 @@
 # --- IMPORTACIONES ---
 import pandas as pd
+import time
 import matplotlib.pyplot as plt
 import nltk
 from wordcloud import WordCloud

@@ -13,7 +13,7 @@ stop_words = set(stopwords.words('english'))
 economic_terms = ["economy", "inflation", "recession", "crisis", "tariff", "interest", "gdp", "unemployment"]
 
 # --- CARGAR DATOS ---
-input_path = r"C:\Users\gonlo\Desktop\TFG\Datos\Raw\Reddit\reddit_comments_10years_2025-05-12.csv" # ⚠️ Ajusta la fecha del archivo
+input_path = r"C:\Users\gonlo\Desktop\TFG\Datos\Raw\Reddit\reddit_comments_10years_2025-05-12.csv" #  Ajusta la fecha del archivo
 output_path = r"C:\Users\gonlo\Desktop\TFG\Datos\Resultados\reddit_cleaned_filtered.csv"
 
 # --- FUNCIONES AUXILIARES ---
@@ -35,4 +35,4 @@ df = df[df["clean_text"].str.contains('|'.join(economic_terms), case=False, na=F
 # --- GUARDAR RESULTADO LIMPIO Y FILTRADO ---
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 df.to_csv(output_path, index=False)
-print(f"✅ Dataset depurado y filtrado guardado en: {output_path}")
+print(f" Dataset depurado y filtrado guardado en: {output_path}")

@@ -42,4 +42,4 @@ for j in range(i + 1, len(axes)):
 plt.tight_layout()
 plt.savefig(output_path, dpi=300)
 plt.close()
-print(f"✅ Nube compuesta guardada en: {output_path}")
+print(f" Nube compuesta guardada en: {output_path}")

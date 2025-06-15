@@ -67,4 +67,4 @@ output_path = os.path.join(output_folder, "comparacion_sentimiento_v1_v2_con_ten
 plt.savefig(output_path)
 plt.close()
 
-print("✅ Gráfica guardada en:", output_path)
+print("Gráfica guardada en:", output_path)

@@ -27,7 +27,7 @@ nltk.download("stopwords")
 nltk.download("punkt")
 
 stop_words = set(nltk.corpus.stopwords.words('english'))
-economic_terms = ["economy", "inflation", "recession", "crisis", "tariff", "interest", "gdp", "unemployment"]  # ✅ Palabras clave económicas
+economic_terms = ["economy", "inflation", "recession", "crisis", "tariff", "interest", "gdp", "unemployment"]  # Palabras clave económicas
 
 # --- FUNCIONES DE PROCESAMIENTO ---
 
@@ -50,7 +50,7 @@ def prepare_dataset(df):
     df["title"] = None
     df["type"] = "comentario"
     df = df[["source", "date", "title", "clean_text", "type", "score"]]
-    df = df[df["clean_text"].str.contains('|'.join(economic_terms), case=False, na=False)]  # ✅ Filtro temático aplicado
+    df = df[df["clean_text"].str.contains('|'.join(economic_terms), case=False, na=False)]  # Filtro temático aplicado
     return df
 
 # --- FUNCIONES DE EXTRACCIÓN ---
@@ -106,7 +106,7 @@ def build_full_reddit_dataset(query, subreddits, limit_per_month=100):
                 limit=limit_per_month
             )
             if df.empty:
-                print(f"⚠️ Sin resultados para r/{sub} en ese mes, buscando sin filtro de keyword...")
+                print(f"Sin resultados para r/{sub} en ese mes, buscando sin filtro de keyword...")
                 df = get_reddit_comments(
                     query="",
                     start_date=fecha_actual.strftime("%Y-%m-%d"),
@@ -137,13 +137,13 @@ def build_full_reddit_dataset(query, subreddits, limit_per_month=100):
     else:
         df_final = pd.DataFrame()
 
-    print(f"✅ Total de comentarios descargados en 10 años: {total_comments}")
+    print(f"Total de comentarios descargados en 10 años: {total_comments}")
 
     if log:
         df_log = pd.DataFrame(log)
         log_path = r"C:\Users\gonlo\Desktop\TFG\Datos\Raw\Reddit\reddit_comentarios_vacios.csv"
         df_log.to_csv(log_path, index=False)
-        print(f"📝 Log guardado en: {log_path}")
+        print(f"Log guardado en: {log_path}")
 
     return df_final
 
@@ -179,6 +179,6 @@ if __name__ == "__main__":
         file_name = f"reddit_comments_10years_{today_date}.csv"
         full_path = os.path.join(save_folder, file_name)
         df_reddit.to_csv(full_path, index=False)
-        print(f"✅ Dataset guardado en: {full_path}")
+        print(f"Dataset guardado en: {full_path}")
 else:
-    print("❌ No se encontraron comentarios para el periodo especificado.")
+    print("No se encontraron comentarios para el periodo especificado.")

@@ -117,7 +117,7 @@ def build_full_reddit_dataset(query, subreddits, limit_per_month=100):
     else:
         df_final = pd.DataFrame()
 
-    print(f"\n✅ Total de comentarios descargados en 10 años: {total_comments}")
+    print(f"\n Total de comentarios descargados en 10 años: {total_comments}")
     return df_final
 
 # --- EJECUCIÓN PRINCIPAL ---
@@ -161,7 +161,7 @@ if __name__ == "__main__":
     # Guarda el CSV
     df_reddit.to_csv(full_path, index=False)
     
-    print(f"\n✅ Dataset guardado en: {full_path}")
+    print(f"\n Dataset guardado en: {full_path}")
 else:
-    print("\n❌ No se encontraron comentarios para el periodo especificado.")
+    print("\n No se encontraron comentarios para el periodo especificado.")
 

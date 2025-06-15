@@ -60,7 +60,7 @@ for r in resultados:
 # 4. Ajuste del mejor modelo ARIMA y diagnóstico
 # ====================================================
 
-# Supongamos que el mejor es ARIMA(1,1,1)
+# ARIMA(1,1,1)
 modelo = ARIMA(serie, order=(1,1,1)).fit()
 
 # Diagnóstico de residuos

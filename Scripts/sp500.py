@@ -28,4 +28,4 @@ output_path = r'C:\Users\gonlo\Desktop\TFG\Datos\Raw\Finance\sp500_10_anios.xlsx
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 sp500.to_excel(output_path, index=False)
 
-print(f"✅ Excel limpio generado en:\n{output_path}")
+print(f"Excel limpio generado en:\n{output_path}")
