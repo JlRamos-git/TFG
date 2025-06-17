@@ -35,4 +35,3 @@ df = df[df["clean_text"].str.contains('|'.join(economic_terms), case=False, na=F
 # --- GUARDAR RESULTADO LIMPIO Y FILTRADO ---
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 df.to_csv(output_path, index=False)
-print(f" Dataset depurado y filtrado guardado en: {output_path}")
